@@ -1,0 +1,5 @@
+// Add aliases in $aliases
+'login' => \App\Filters\CekLogin::class,
+'role'  => \App\Filters\CekRole::class,
+// Optionally register SecureHeaders filter
+'secureheaders' => \App\Filters\SecureHeaders::class,

@@ -1,0 +1,17 @@
+// CI4 Secure Auth demo routes (add into your Routes.php)
+$routes->get('login', 'Auth\AuthController::login');
+$routes->post('login', 'Auth\AuthController::login');
+
+$routes->get('register', 'Auth\AuthController::register');
+$routes->post('register', 'Auth\AuthController::register');
+
+$routes->post('captcha/verifySlider', 'Auth\CaptchaController::verifySlider');
+$routes->get('captcha/generatePuzzle', 'Auth\CaptchaPuzzleController::generate');
+$routes->post('captcha/verifyPuzzle', 'Auth\CaptchaPuzzleController::verify');
+
+$routes->post('otp/send', 'Auth\OtpController::sendOtp');
+$routes->post('otp/verify', 'Auth\OtpController::verify');
+
+$routes->get('dashboard', 'Dashboard\DashboardUser::index', ['filter' => 'login']);
+$routes->get('admin', 'Dashboard\DashboardAdmin::index', ['filter' => 'role:admin']);
+$routes->get('logout', 'Auth\AuthController::logout');
